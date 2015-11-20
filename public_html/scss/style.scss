@@ -1,0 +1,43 @@
+@import "bower_components/mappy-breakpoints/_mappy-breakpoints.scss";
+
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+$breakpoints: (
+  small: 480px,
+  large: 800px
+);
+
+// You can use and valid arguments inserted into mappy-bp as the map values. Any of the following would do
+$mappy-queries: (
+  phone: mappy-bp(small), // media all and (max-height: 29.9375em)
+  tablet: mappy-bp(small large), // @media all and (min-width 30em) and (max-width: 49.375em)
+  desktop: mappy-bp(960px 2500px), // media all and (min-width: 60em) and (max-width: 74.9375em)
+  //change-type: mappy-bp(small, type: screen) // media screen and (min-width: 30em)
+);
+
+h1 {
+    color: #333;
+    @include mappy-query(desktop) {
+        color: red;
+    }
+}
+
+.test {
+    padding: 20px;
+    margin-bottom: 20px;
+    background: #F0F0F0;
+}
+ul {
+    list-style-type: none;
+    li {
+        color: #333;
+        background: #FFF;
+        margin-bottom: 20px;
+        text-align: center;
+        padding: 10px;
+    }
+}
